@@ -1,4 +1,3 @@
-import React from "react";
 import { Text, Box } from "ink";
 import { readFileNames } from "./lib.js";
 
