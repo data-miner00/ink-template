@@ -1,4 +1,4 @@
-import { Text, Box } from "ink";
+import { Text, Box, useApp, useInput, useWindowSize } from "ink";
 import { readFileNames } from "./lib.js";
 
 type Props = {
@@ -6,8 +6,21 @@ type Props = {
 };
 
 export default function App({ name = "Stranger" }: Props) {
+	const { exit } = useApp();
+	const { columns, rows } = useWindowSize();
+
+	useInput((input) => {
+		if (input === "q") exit();
+	});
+
 	return (
-		<Box padding={1} borderColor="grey" borderStyle="round">
+		<Box
+			width={columns}
+			height={rows}
+			padding={1}
+			borderColor="grey"
+			borderStyle="round"
+		>
 			<Text>
 				Hello, <Text color="green">{name}</Text>
 			</Text>
