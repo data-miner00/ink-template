@@ -5,7 +5,7 @@
 	"bin": "dist/cli.js",
 	"type": "module",
 	"engines": {
-		"node": ">=16"
+		"node": ">=22"
 	},
 	"scripts": {
 		"build": "tsc",
@@ -15,13 +15,13 @@
 		"dist"
 	],
 	"dependencies": {
-		"ink": "^4.1.0",
-		"meow": "^11.0.0",
-		"react": "^18.2.0"
+		"ink": "^8.0.0",
+		"meow": "^14.1.0",
+		"react": "^19.3.0"
 	},
 	"devDependencies": {
 		"@types/node": "^22.20.5",
-		"@types/react": "^18.0.32",
-		"typescript": "^5.0.3"
+		"@types/react": "^19.3.0",
+		"typescript": "^7.0.2"
 	}
 }
