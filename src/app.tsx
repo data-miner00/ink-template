@@ -1,14 +1,21 @@
-import React from 'react';
-import {Text} from 'ink';
+import React from "react";
+import { Text, Box } from "ink";
+import { readFileNames } from "./lib.js";
 
 type Props = {
 	name: string | undefined;
 };
 
-export default function App({name = 'Stranger'}: Props) {
+export default function App({ name = "Stranger" }: Props) {
 	return (
-		<Text>
-			Hello, <Text color="green">{name}</Text>
-		</Text>
+		<Box padding={1} borderColor="grey" borderStyle="round">
+			<Text>
+				Hello, <Text color="green">{name}</Text>
+			</Text>
+
+			{readFileNames(".").map((fileName, index) => (
+				<Text key={index}>{fileName}</Text>
+			))}
+		</Box>
 	);
 }
